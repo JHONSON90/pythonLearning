@@ -35,3 +35,21 @@ print(c)
 print(d)
 print(e)
 print(f)
+print("---------------------------------Metodos----------------------------")
+# metodos de strings
+print(language.upper())
+print(language.lower())
+print(language.capitalize())
+print(language.count("P"))
+print(language.find("P"))
+print(language.isnumeric())
+print(language.isalpha())
+print(language.replace("P", "B"))
+
+print(language[0:3])
+print(language[-1])
+print(language[::-1])#reverse
+
+#funciones con strings
+
+print(language.capitalize)
