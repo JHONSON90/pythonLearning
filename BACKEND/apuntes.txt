@@ -1,0 +1,79 @@
+para el backend vamos a utilizar el framework de fastapi que es la utilizada en estos momentos por empresas como netflix y uber, este framework nos facilita crear las api 
+
+1 vamos a levantar un servidor con uvicorn
+
+los tipos de peticiones HTTP que se pueden hacer a un servidor son el 
+    - get = obtener
+
+
+para levantar el servidor vamos a la terminal y colocamos 
+
+uvicorn main:app --reload
+
+para generar documentacion lo hace de manera automatica y se la puede ver dentro de redoc "redocly" o tambien lo podemos hacer con docs "swagger"
+
+Documentacion con Swagger: http://127.0.0.1:8000/docs
+Documentacion con Redocly: http://127.0.0.1:8000/redoc
+
+#### codigos de status 
+
+para el manejo de los errores en los code status tenemos que importar el  HTTPException que se va a encargar de los errores que nos puede generar la aplicacion y nos dara codigos diferentes al que colocamos por defecto al momento de llamar el @app 
+
+
+## Routes
+
+para iniciar las rutas primero antes que todo vamos a importar en cada componente que componen las rutas el APIRouter "from fastApi import APIRouter"
+
+segundo ejecutamos el APIRouter "router = APIRouter()"
+
+tercero llamamos en ves de @app a router
+"@router.get("products")
+async def products():
+    return product_list"
+
+
+en el main vamos a importar la ruta "from routers import products"
+
+y lo llamamos "app.include_router(products.router)"
+
+Para un mejor manejo se aconseja crear un archivo por cada ruta osea archivo de products todos los path serian '/products'
+
+# RECURSOS ESTATICOS
+
+Son los documentos que los vamos a dejar fijos para poder descargar y que no necesitan ruta especifica si no con el static ya se la podria definir desde el path
+
+# autorizacion OAUTH2
+
+nos sirve para autenticar y decir esta informacion esta permitida para este usuario, dado contrario solo entrego esto que es general o le entrego toda la informacion para un administrador, osea la autenticacion y la autorizacion 
+
+autenticacion = identificar al usuario
+autorizacion = datos que se puede dar a cada usuario
+
+
+para la autenticacion basica seria el de usuario y contraseña vamos a importar el fastapi.security de la siguiente manera 
+
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+
+OAuth2PasswordBearer = se va a encargar de la autenticacion del usuario y la contraseña
+
+OAuth2PasswordRequestForm = es la forma como se va a enviar a la api y verifica si es usuario de nuestra api
+
+tambien tenemos que importar el Depends para poderlo colocar en la optension de los datos que significa la dependencia de todo el sistema de autenticacion, esto hace que me autentique y pueda obtener datos de la api dependiendo
+
+from fastapi import FastAPI, Depends
+
+
+la autenticacion con JWT esto ya nos sirve con encriptacion 
+
+primero hay que instalar pip install "python-jose[cryptography]" y tambien vamos a instalar pip install "passlib[bcrypt]" esto sirve para encriptar y se los podria ya utilizar y 
+
+
+
+base de datos
+
+para conectarnos a una base de datos vamos a instalar pip install pymongo, Para iniciar vamos a importar from pymongo import MongoClient 
+y  ejecutamos la funcion MongoClient()
+
+para iniciar una conexion a una base de datos de mongo le damos conectar en la extension y nos va a salir el ayudante de mongo y vamos a colocar  mongodb://localhost con esto establecemos una nueva conexion
+
+ahora si podemos crear el fichero que gestiona todo desde nuestra base de datos client.py

@@ -1,0 +1,31 @@
+para el frontend vamos aprender reflex tambien se puede aprender django, 
+
+reflex permite crear fast apis y tambien tiene integrado react osea que puede hacer un frontend backend en una sola tecnologia
+
+para instalarlo vamos a ejecutar el siguiente comando pero antes vamos a crear un entorno virtual que es el encargado de aislar todo lo que se instale y lo vamos a crear de la siguiente manera
+
+py -m venv .venv  asi creamos el intorno virtual el venv final podemos cambiarlo a lo que nosotros querramos
+
+para activarlo vamos a ejecutar el siguiente codigo 
+
+.venv\Scripts\activate
+
+para desactivarlo ejecutamos 
+
+deactivate
+
+
+ahora ya se nos pone un (.venv) al inicio de la ruta de donde estamos 
+
+ya que estamos dentro del entorno virtual podemos instalar reflex con pip install reflex
+
+ya instalado todo  podemos inicializar con el reflex init y ya crea nuestro proyecto 
+
+nos pide que template queremos usar y le vamos a colocar el que nosotros queramos usar y vamos a colocar el numero de los que nos da la opcion o de lo contrario si tenemos un template o una plantilla podemos colocar la url de la plantilla con el siguiente comando 
+
+reflex init --template {app_url}
+
+en la carpeta de assets son todos los recursos fijos que vamos a utilizar en nuestra web podemos colocar alli videos, imagenes, audios etc...
+
+
+para correr la aplicacion lo hacemos con reflex run 
