@@ -39,3 +39,8 @@ print(3 > 4 and "hola" > "python")
 print(3 < 4 or "hola" > "python")
 
 print(not(3 > 4))
+
+
+A = ['1','2','3']
+for a in A:
+    print(2*a)

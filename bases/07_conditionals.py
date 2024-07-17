@@ -37,3 +37,23 @@ if not my_string: #como negamos el valor entra aqui
     print(my_string)
 elif my_string: #aqui entraria si la variable tuviera algo
     print("la string contiene: ", my_string)
+
+
+Annie=1996
+Jane=1999
+if Annie%4==0:
+    print("Annie was born in a leap year")
+elif Jane%4==0:
+    print("Jane was born in a leap year")
+else:
+    print("None of them were born in a leap year")
+    
+
+Sam = 10
+
+if Sam < 9:
+    print("milk porridge for breakfast")
+elif Sam > 9 and Sam < 14:
+    print("sandwich")
+else:
+    print("burger")
